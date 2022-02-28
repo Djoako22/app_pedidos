@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>App Menus</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div
+            class="offcanvas"
+            onclick="this.classList.remove('mostrar');ventana_pedidos.classList.remove('mostrar');ventana_telefono.classList.remove('mostrar')"
+        ></div>
+        <div class="tel">
+            <form>
+                <span>Telefono</span>
+                <input type="text" class="telefono" name="telefono"/>
+            </form>
+        </div>
+        <div class="ped"></div>
+        <div class="main">
+            <h3
+                class="btn_telefono"
+                onclick="ventana_telefono.classList.add('mostrar');offcanvas.classList.add('mostrar')"
+            >
+                📞
+            </h3>
+            <button
+                class="btn_pedidos btn"
+                onclick="ventana_pedidos.classList.add('mostrar');offcanvas.classList.add('mostrar')"
+            >
+                <span class="edge"></span>
+                <span class="front text">Pedidios</span>
+            </button>
+            <form class="cliente">
+                <h2>Cliente:</h2>
+                <input
+                    type="text"
+                    placeholder="Nombre"
+                    maxlength="12"
+                    required
+                />
+                <input type="text" placeholder="Precio final" disabled />
+                <div style="display: grid; grid-template-columns: 1fr 30%">
+                    <button class="btn btn-1">
+                        <span class="edge"></span>
+                        <span class="front text">Enviar</span>
+                    </button>
+                    <div class="btn btn-2" onclick="render()">
+                        <span class="edge"></span>
+                        <span class="front text">⨉</span>
+                    </div>
+                </div>
+                <div style="background-color: moccasin; padding: 10px 15px">
+                    <span>Pedido:</span>
+                    <div class="pedido"></div>
+                </div>
+            </form>
+            <h2>Menus:</h2>
+            <div class="menus"></div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
